@@ -163,5 +163,5 @@ isDocument(string: string): boolean
 
 MIT License
 
-Copyright (c) 2014 Jonathan Ong <me@jongleberry.com>
+Copyright (c) 2014 Jonathan Ong <me@jongleberry.com><br>
 Copyright (c) 2025 Cezar Augusto <boss@cezaraugusto.net>
