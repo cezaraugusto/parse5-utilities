@@ -1,96 +1,167 @@
-
-# parse5-utils
+[npm-image]: https://img.shields.io/npm/v/parse5-utilities.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/parse5-utilities
+[downloads-image]: http://img.shields.io/npm/dm/parse5-utilities.svg?style=flat-square
+[downloads-url]: https://npmjs.org/package/parse5-utilities
+[ci-image]: https://github.com/cezaraugusto/parse5-utilities/actions/workflows/ci.yml/badge.svg
+[ci-url]: https://github.com/cezaraugusto/parse5-utilities/actions/workflows/ci.yml
 
 [![NPM version][npm-image]][npm-url]
-[![Build status][travis-image]][travis-url]
-[![Test coverage][coveralls-image]][coveralls-url]
-[![Dependency Status][david-image]][david-url]
-[![License][license-image]][license-url]
 [![Downloads][downloads-image]][downloads-url]
+[![CI][ci-image]][ci-url]
+
+# parse5-utilities
 
 Low-level parse5 node manipulation utilities.
 
 ## API
 
-```js
-const utils = require('parse5-utils')
+### parse
+
+> Parse an HTML string. If `smart` is true, returns a `document` or `documentFragment` based on the input. Otherwise, always parses it as a document.
+
+```typescript
+parse(html: string, smart?: boolean): Document | DocumentFragment
 ```
 
-### let document = utils.parse(html, [smart])
+### createFragment
 
-Parse an HTML string,
-If `smart`, returns a `document` or `documentFragment`, appropriately.
-Otherwise, always parses it as a document.
+> Parses HTML as a fragment.
 
-### let fragment = utils.parseFragment(html)
+```typescript
+createFragment(html: string): DocumentFragment
+```
 
-Parses HTML as a fragment.
+### stringify
 
-### let html = utils.serialize(document || fragment)
+> Converts an AST node into an HTML string.
 
-Converts an AST into an HTML string.
+```typescript
+stringify(node: Node): string
+```
 
-### let attributes = utils.attributesOf(node)
+### attributesOf
 
-Get the attributes of a node as an object.
+> Get the attributes of a node as an object.
 
-### setAttribute(node, key, value)
+```typescript
+attributesOf(node: Node): Record<string, string>
+```
 
-Set an attribute of a node.
+### setAttribute
 
-### getAttribute(node, key)
+> Set an attribute on a node.
 
-Get the attribute of a node.
+```typescript
+setAttribute(node: Node, key: string, value: string): Node
+```
 
-### node.attrs = utils.toAttrs(attributes)
+### getAttribute
 
-Set a node's attributes from an object.
+> Get an attribute value from a node.
 
-### let node = utils.createNode(tagName)
+```typescript
+getAttribute(node: Node, key: string): string | undefined
+```
 
-Create a node with a specific tag name.
+### removeAttribute
 
-### let textNode = utils.createTextNode(text)
+> Remove an attribute from a node.
 
-Create a text node.
+```typescript
+removeAttribute(node: Node, key: string): void
+```
 
-### node = utils.prepend(parent, node)
+### toAttrs
 
-Add a child to a node, making it the first child.
+> Convert an object of attributes into an array of attribute objects.
 
-### node = utils.append(parent, node)
+```typescript
+toAttrs(attributes: Record<string, string>): Attribute[]
+```
 
-Add a child to a node, making it the last child.
+### createNode
 
-### node = utils.replace(originalNode, newNode)
+> Create a new element node with the specified tag name.
 
-Replace a node with another node.
+```typescript
+createNode(tagName: string): Element
+```
 
-### node = utils.remove(node)
+### createTextNode
 
-Remove a node.
+> Create a new text node with the specified text content.
 
-### nodes = utils.flatten(node || [nodes])
+```typescript
+createTextNode(text: string): TextNode
+```
 
-Get all the nodes in a tree as a flat array.
+### prepend
 
-### let text = utils.textOf(node)
+> Add a child to a node, making it the first child.
 
-Get the text of a node.
+```typescript
+prepend(parent: ParentNode, node: ChildNode): ChildNode
+```
 
-### utils.setText(node, text)
+### append
 
-Set the text of a node.
+> Add a child to a node, making it the last child.
 
-[npm-image]: https://img.shields.io/npm/v/parse5-utils.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/parse5-utils
-[travis-image]: https://img.shields.io/travis/webdeps/parse5-utils/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/webdeps/parse5-utils
-[coveralls-image]: https://img.shields.io/codecov/c/github/codecov/example-python/master.svg?style=flat-square
-[coveralls-url]: https://codecov.io/gh/webdeps/parse5-utils
-[david-image]: http://img.shields.io/david/webdeps/parse5-utils.svg?style=flat-square
-[david-url]: https://david-dm.org/webdeps/parse5-utils
-[license-image]: http://img.shields.io/npm/l/parse5-utils.svg?style=flat-square
-[license-url]: LICENSE
-[downloads-image]: http://img.shields.io/npm/dm/parse5-utils.svg?style=flat-square
-[downloads-url]: https://npmjs.org/package/parse5-utils
+```typescript
+append(parent: ParentNode, node: ChildNode): ChildNode
+```
+
+### replace
+
+> Replace a node with another node.
+
+```typescript
+replace(originalNode: ChildNode, newNode: ChildNode): ChildNode | undefined
+```
+
+### remove
+
+> Remove a node from its parent.
+
+```typescript
+remove(node: ChildNode): ChildNode
+```
+
+### flatten
+
+> Get all the nodes in a tree as a flat array.
+
+```typescript
+flatten(node: Node | Node[]): Node[]
+```
+
+### textOf
+
+> Get the text content of a node. Throws an error if the node has multiple children or non-text children.
+
+```typescript
+textOf(node: ParentNode): string
+```
+
+### setText
+
+> Set the text content of a node.
+
+```typescript
+setText(node: ParentNode, text: string): ParentNode
+```
+
+### isDocument
+
+> Check if a string is likely a complete HTML document.
+
+```typescript
+isDocument(string: string): boolean
+```
+
+## License
+
+MIT License
+
+Copyright (c) 2014 Jonathan Ong <me@jongleberry.com>
+Copyright (c) 2025 Cezar Augusto <boss@cezaraugusto.net>
