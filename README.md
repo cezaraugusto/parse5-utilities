@@ -1,17 +1,13 @@
-[npm-image]: https://img.shields.io/npm/v/parse5-utilities.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/parse5-utilities
-[downloads-image]: http://img.shields.io/npm/dm/parse5-utilities.svg?style=flat-square
-[downloads-url]: https://npmjs.org/package/parse5-utilities
-[ci-image]: https://github.com/cezaraugusto/parse5-utilities/actions/workflows/ci.yml/badge.svg
-[ci-url]: https://github.com/cezaraugusto/parse5-utilities/actions/workflows/ci.yml
+[npm-version-image]: https://img.shields.io/npm/v/parse5-utilities.svg?color=0971fe
+[npm-version-url]: https://www.npmjs.com/package/parse5-utilities
+[npm-downloads-image]: https://img.shields.io/npm/dm/parse5-utilities.svg?color=2ecc40
+[npm-downloads-url]: https://www.npmjs.com/package/parse5-utilities
+[action-image]: https://github.com/cezaraugusto/parse5-utilities/actions/workflows/ci.yml/badge.svg?branch=main
+[action-url]: https://github.com/cezaraugusto/parse5-utilities/actions
 
-[![NPM version][npm-image]][npm-url]
-[![Downloads][downloads-image]][downloads-url]
-[![CI][ci-image]][ci-url]
+> Low-level parse5 node manipulation utilities. ESM-compatible version of parse5-utils.
 
-# parse5-utilities
-
-Low-level parse5 node manipulation utilities.
+# parse5-utilities [![Version][npm-version-image]][npm-version-url] [![Downloads][npm-downloads-image]][npm-downloads-url] [![workflow][action-image]][action-url]
 
 ## API
 
@@ -161,7 +157,4 @@ isDocument(string: string): boolean
 
 ## License
 
-MIT License
-
-Copyright (c) 2014 Jonathan Ong <me@jongleberry.com><br>
-Copyright (c) 2025 Cezar Augusto <boss@cezaraugusto.net>
+MIT (c) Cezar Augusto.
