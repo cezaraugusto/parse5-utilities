@@ -52,5 +52,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/cezaraugusto/parse5-utilities.git"
-  }
+  },
+  "sideEffects": false
 }
