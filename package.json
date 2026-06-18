@@ -32,7 +32,7 @@
     "vitest": "^3.1.4"
   },
   "dependencies": {
-    "parse5": "^7.3.0"
+    "parse5": "^8.0.1"
   },
   "pnpm": {
     "overrides": {
