@@ -1,7 +1,7 @@
 {
   "name": "parse5-utilities",
   "description": "Low-level parse5 node manipulation utilities. ESM-compatible version of parse5-utils.",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "type": "module",
   "packageManager": "pnpm@9.9.0",
   "exports": {
