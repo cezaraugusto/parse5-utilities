@@ -9,6 +9,21 @@
 
 # parse5-utilities [![Version][npm-version-image]][npm-version-url] [![Downloads][npm-downloads-image]][npm-downloads-url] [![workflow][action-image]][action-url]
 
+Low-level parse5 node manipulation utilities. An ESM-compatible version of parse5-utils.
+
+## Installation
+
+```bash
+npm i parse5-utilities
+```
+
+```ts
+import {parse, stringify} from 'parse5-utilities'
+
+const doc = parse('<p>hello</p>')
+const html = stringify(doc)
+```
+
 ## API
 
 ### parse
@@ -154,6 +169,14 @@ setText(node: ParentNode, text: string): ParentNode
 ```typescript
 isDocument(string: string): boolean
 ```
+
+## Related projects
+
+* [parse5-asset-patcher](https://github.com/cezaraugusto/parse5-asset-patcher)
+* [browser-extension-manifest-fields](https://github.com/cezaraugusto/browser-extension-manifest-fields)
+* [browser-extension-capabilities](https://github.com/cezaraugusto/browser-extension-capabilities)
+* [browser-extension-compat-data](https://github.com/cezaraugusto/browser-extension-compat-data)
+* [extension-from-store](https://github.com/cezaraugusto/extension-from-store)
 
 ## License
 
