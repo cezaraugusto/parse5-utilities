@@ -4,10 +4,12 @@
 [npm-downloads-url]: https://www.npmjs.com/package/parse5-utilities
 [action-image]: https://github.com/cezaraugusto/parse5-utilities/actions/workflows/ci.yml/badge.svg?branch=main
 [action-url]: https://github.com/cezaraugusto/parse5-utilities/actions
+[provenance-image]: https://img.shields.io/badge/provenance-verified-0971fe?logo=npm&logoColor=white
+[provenance-url]: https://www.npmjs.com/package/parse5-utilities
 
 > Low-level parse5 node manipulation utilities. ESM-compatible version of parse5-utils.
 
-# parse5-utilities [![Version][npm-version-image]][npm-version-url] [![Downloads][npm-downloads-image]][npm-downloads-url] [![workflow][action-image]][action-url]
+# parse5-utilities [![Version][npm-version-image]][npm-version-url] [![Downloads][npm-downloads-image]][npm-downloads-url] [![workflow][action-image]][action-url] [![provenance][provenance-image]][provenance-url]
 
 Low-level parse5 node manipulation utilities. An ESM-compatible version of parse5-utils.
 
